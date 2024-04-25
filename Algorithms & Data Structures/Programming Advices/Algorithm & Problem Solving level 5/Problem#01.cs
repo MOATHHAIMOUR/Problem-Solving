@@ -49,7 +49,6 @@
                  { 7, "Seven" },
                  { 8, "Eight" },
                  { 9, "Nine" },
-                 
             };
 
             Dictionary<int, string> _11_To_19 = new Dictionary<int, string>
@@ -116,14 +115,9 @@
                 }
             }
 
-           
-
             numberToWord +=  " "  + placeValue + " , "; 
 
-
             return numberToWord;
-
-
         }
 
         public static string ConvertNumberToWord(string number)
@@ -165,15 +159,5 @@
             //delete last ","
             numberInWord = numberInWord.Substring(0, numberInWord.Length-2);
             return numberInWord;
-
         }
-
-
-
-
-
-
-
-
-
  }
