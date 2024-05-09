@@ -1,0 +1,21 @@
+		  
+--Problem 48: Get the Lowest Manufacturers manufactured the lowest number of models
+
+SELECT Makes.Make, COUNT(*) AS NumberOfModels
+FROM Makes 
+INNER JOIN MakeModels
+ON Makes.MakeID = MakeModels.MakeID
+GROUP BY Makes.Make
+Having COUNT(*) = 
+(
+		select MIN(NumberOfModels) as MaxNumberOfModels
+		from
+		(
+
+			SELECT        Makes.Make, COUNT(*) AS NumberOfModels
+			FROM            Makes INNER JOIN
+										 MakeModels ON Makes.MakeID = MakeModels.MakeID
+			GROUP BY Makes.Make
+		
+		) R1
+)

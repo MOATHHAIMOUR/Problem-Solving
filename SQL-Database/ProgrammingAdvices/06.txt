@@ -1,0 +1,14 @@
+-- Problem 6: Get number of vehicles made between 1950 and 2000 per make and add total vehicles column beside it, then calculate it's percentage
+
+Select *,Perc = CAST(R1.TotalCarsPerMack As FLOAT) / CAST(R1.TotalVehicles AS FLOAT)
+FROM (
+	Select 
+	Makes.Make,count(*) as TotalCarsPerMack,
+	TotalVehicles = (Select Count(*) from VehicleDetails)
+	from VehicleDetails
+	inner join Makes
+	on VehicleDetails.MakeID = Makes.MakeID
+	where (VehicleDetails.Year between 1950 and 2000)
+	Group by Makes.Make
+)R1
+order by R1.TotalCarsPerMack DESC

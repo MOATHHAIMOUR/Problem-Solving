@@ -1,0 +1,6 @@
+--  Problem 44: Get Number of Models Per Make
+SELECT Makes.Make, Count(*) as NumberOfModels
+FROM     Makes INNER JOIN
+MakeModels ON Makes.MakeID = MakeModels.MakeID
+Group by Makes.Make
+Order By NumberOfModels Desc

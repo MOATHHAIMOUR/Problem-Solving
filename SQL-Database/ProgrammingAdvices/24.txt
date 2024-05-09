@@ -1,0 +1,6 @@
+--  Problem 24: Get make and vehicles that the engine contains 'OHV' and have Cylinders = 4
+
+Select VehicleDetails.*,Makes.Make from VehicleDetails 
+inner join Makes
+on VehicleDetails.MakeID = Makes.MakeID
+where VehicleDetails.Engine like '%OHV%' AND VehicleDetails.Engine_Cylinders = 4

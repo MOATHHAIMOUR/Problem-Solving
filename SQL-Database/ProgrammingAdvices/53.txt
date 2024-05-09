@@ -1,0 +1,6 @@
+--Problem 53 Get All Employees managed by 'Mohammed'
+Select Employees.*, Manager.Name from Employees
+inner join Employees As Manager 
+on Employees.ManagerID = Manager.EmployeeID
+where Manager.Name = 'Mohammed'
+

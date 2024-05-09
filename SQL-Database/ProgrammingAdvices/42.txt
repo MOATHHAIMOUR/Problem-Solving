@@ -1,0 +1,7 @@
+--Problem 42: Get Make and Total Number Of Doors Manufactured Per Make
+
+SELECT Makes.Make,SUM(VehicleDetails.NumDoors) as TotalNumberOfDoors
+FROM     VehicleDetails INNER JOIN
+Makes ON VehicleDetails.MakeID = Makes.MakeID
+Group by Makes.Make
+Order By TotalNumberOfDoors desc

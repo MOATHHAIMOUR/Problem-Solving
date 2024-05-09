@@ -1,0 +1,5 @@
+--  Problem 34: Get all vehicles that have the Maximum Engine_CC
+Select * from  VehicleDetails 
+where VehicleDetails.Engine_CC = (
+Select Max(VehicleDetails.Engine_CC) as MinimimEngineCC
+from VehicleDetails)

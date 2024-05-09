@@ -1,0 +1,6 @@
+--Problem 21: Get percentage of vehicles that has no doors specified
+
+Select percentage_of_vehicles_no_doors =
+CAST((Select Count(*)as TotalWithNoSpecifiedDoors from VehicleDetails where VehicleDetails.NumDoors is null)AS FLOAT)
+/
+CAST((Select Count(*)as TotalCars from VehicleDetails)AS FLOAT) 

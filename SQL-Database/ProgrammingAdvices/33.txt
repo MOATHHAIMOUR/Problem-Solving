@@ -1,0 +1,5 @@
+-- Problem 33: Get all vehicles that have the minimum Engine_CC
+Select * from  VehicleDetails 
+where VehicleDetails.Engine_CC = (
+Select Min(VehicleDetails.Engine_CC) as MinimimEngineCC
+from VehicleDetails)

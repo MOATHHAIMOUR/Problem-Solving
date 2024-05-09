@@ -1,0 +1,11 @@
+
+-- Problem 16: Get total Makes that Mantufactures DriveTypeName=FWD
+
+Select Count(*) AS total_Makes_Mantufactures_DriveTypeName_Is_FWD
+FROM (
+	SELECT distinct Makes.Make, DriveTypes.DriveTypeName
+	FROM     VehicleDetails INNER JOIN
+	Makes ON VehicleDetails.MakeID = Makes.MakeID INNER JOIN
+	DriveTypes ON VehicleDetails.DriveTypeID = DriveTypes.DriveTypeID
+	where DriveTypes.DriveTypeName = 'FWD'
+)R1

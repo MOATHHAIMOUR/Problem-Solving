@@ -1,0 +1,11 @@
+
+
+--Problem 18: Get total vehicles per DriveTypeName Per Make then filter only results with total > 10,000
+
+SELECT DriveTypes.DriveTypeName, Makes.Make, COUNT(*) AS total_vehicles_per_DriveTypeName_Per_Make
+FROM     VehicleDetails INNER JOIN
+DriveTypes ON VehicleDetails.DriveTypeID = DriveTypes.DriveTypeID INNER JOIN
+Makes ON VehicleDetails.MakeID = Makes.MakeID
+Group by DriveTypes.DriveTypeName, Makes.Make
+Having COUNT(*)>10000
+Order By Make ASC, total_vehicles_per_DriveTypeName_Per_Make Desc

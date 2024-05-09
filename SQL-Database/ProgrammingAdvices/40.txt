@@ -1,0 +1,10 @@
+-- Problem 40: Get all Makes that manufactures one of the Max 3 Engine CC
+
+Select distinct Makes.Make from VehicleDetails
+inner join Makes 
+on VehicleDetails.MakeID = Makes.MakeID
+where VehicleDetails.Engine_CC in
+(Select distinct top 3 VehicleDetails.Engine_CC from VehicleDetails
+Order By Engine_CC Desc
+)
+Order By Make

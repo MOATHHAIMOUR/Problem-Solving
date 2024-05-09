@@ -1,0 +1,6 @@
+--Problem 15: Get all Makes that manufactures DriveTypeName = FWD
+SELECT distinct Makes.Make, DriveTypes.DriveTypeName
+FROM     VehicleDetails INNER JOIN
+Makes ON VehicleDetails.MakeID = Makes.MakeID INNER JOIN
+DriveTypes ON VehicleDetails.DriveTypeID = DriveTypes.DriveTypeID
+where DriveTypes.DriveTypeName = 'FWD'
